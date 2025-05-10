@@ -1,0 +1,40 @@
+{
+  "os": "macOS-15.4.1-arm64-arm-64bit",
+  "python": "CPython 3.12.4",
+  "startedAt": "2025-05-10T09:42:29.888109Z",
+  "program": "/Users/tejasgadi/Local_Disk_D/Machine_Learning_Projects/intent_classification/research/text_classifier.ipynb",
+  "codePath": "text_classifier.ipynb",
+  "email": "tvggamermax@gmail.com",
+  "root": "/Users/tejasgadi/Local_Disk_D/Machine_Learning_Projects/intent_classification/research",
+  "host": "Tejass-MacBook-Pro.local",
+  "executable": "/Users/tejasgadi/Local_Disk_D/Machine_Learning_Projects/intent_classification/venv/bin/python",
+  "codePathLocal": "text_classifier.ipynb",
+  "cpu_count": 8,
+  "cpu_count_logical": 8,
+  "disk": {
+    "/": {
+      "total": "245107195904",
+      "used": "195190493184"
+    },
+    "/System/Volumes/Data": {
+      "total": "245107195904",
+      "used": "195190493184"
+    }
+  },
+  "memory": {
+    "total": "17179869184"
+  },
+  "cpu": {
+    "count": 8,
+    "countLogical": 8
+  },
+  "apple": {
+    "name": "Apple M2",
+    "ecpuCores": 4,
+    "pcpuCores": 4,
+    "gpuCores": 10,
+    "memoryGb": 16,
+    "swapTotalBytes": "4294967296",
+    "ramTotalBytes": "17179869184"
+  }
+}

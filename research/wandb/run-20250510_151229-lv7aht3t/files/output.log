@@ -1,0 +1,2 @@
+/Users/tejasgadi/Local_Disk_D/Machine_Learning_Projects/intent_classification/venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py:683: UserWarning: 'pin_memory' argument is set as true but not supported on MPS now, then device pinned memory won't be used.
+  warnings.warn(warn_msg)

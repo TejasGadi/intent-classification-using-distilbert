@@ -1,0 +1,32 @@
+# For every module/component i.e. data ingestion for example, we define some config yaml like artifacts path,dataset url etc
+
+# Output path of all components artifacts
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  train_csv_source_url: https://drive.google.com/uc?export=download&id=1nHL-zyNXlihAPGM4A2yL1NylZDN2jJ9g
+  test_csv_source_url: https://drive.google.com/uc?export=download&id=1cX0mFmajUV_UhEloREOO3DaMQs2IbnwJ
+  local_train_csv_path: artifacts/data_ingestion/intent_train_dataset.csv
+  local_test_csv_path: artifacts/data_ingestion/intent_test_dataset.csv
+
+
+data_transformation:
+  root_dir: artifacts/data_transformation
+  data_path: artifacts/data_ingestion
+  local_train_csv_path: artifacts/data_ingestion/intent_train_dataset.csv
+  local_test_csv_path: artifacts/data_ingestion/intent_test_dataset.csv
+  tokenizer_name: distilbert-base-uncased
+
+model_trainer:
+  root_dir: artifacts/model_trainer
+  data_path: artifacts/data_transformation/intent-dataset
+  model_ckpt: distilbert-base-uncased
+
+
+model_evaluation:
+  root_dir: artifacts/model_evaluation
+  data_path: artifacts/data_transformation/intent-dataset
+  model_path: artifacts/model_trainer/finetuned_model
+  tokenizer_path: artifacts/model_trainer/finetuned_model
+  metric_file_path: artifacts/model_evaluation/metrics.csv
