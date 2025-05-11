@@ -113,6 +113,9 @@ Test the trained model results by doing inference via FastAPI application
 
 #### With Docker
 ```bash
+git clone https://github.com/TejasGadi/intent-classification-using-distilbert.git
+cd intent-classification-using-distilbert
+
 docker-compose up --build
 ```
 
