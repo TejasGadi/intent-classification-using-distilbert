@@ -24,7 +24,7 @@ class ModelEvaluation:
         encoded_dataset = load_from_disk(self.config.data_path)
 
         validation_data = encoded_dataset['validation']
-        texts = validation_data['text']
+        texts = validation_data['email_text']
 
          # Tokenize the input text
         inputs = tokenizer(texts, padding=True, truncation=True, return_tensors="pt", max_length=512)

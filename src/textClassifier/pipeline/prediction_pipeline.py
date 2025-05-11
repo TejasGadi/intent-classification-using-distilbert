@@ -37,5 +37,5 @@ class PredictionPipeline:
             outputs = self.model(**inputs)
             prediction = torch.argmax(outputs.logits, dim=1).item()
 
-        return {"text": text, "prediction": prediction, "class_label": self.id2label(prediction)}
+        return {"text": text, "prediction": prediction, "class_label": self.id2label[prediction]}
 

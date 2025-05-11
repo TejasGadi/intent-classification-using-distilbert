@@ -1,15 +1,39 @@
 from fastapi import FastAPI
-from transformers import DistilBertForSequenceClassification, DistilBertTokenizer
+import uvicorn
+
+import sys
+import os
+from fastapi.templating import Jinja2Templates
+from starlette.responses import RedirectResponse
+
+from fastapi.responses import Response
+from src.textClassifier.pipeline.prediction_pipeline import PredictionPipeline
+
+text: str = "What is Text Summarization?"
 
 app = FastAPI()
 
-# Load model and tokenizer
-model = DistilBertForSequenceClassification.from_pretrained("./fine_tuned_model")
-tokenizer = DistilBertTokenizer.from_pretrained("./fine_tuned_model")
+@app.get("/", tags=["authentication"])
+async def index():
+    return RedirectResponse(url="/docs")
 
-@app.post("/predict/")
-def predict(text: str):
-    inputs = tokenizer(text, return_tensors="pt", padding=True, truncation=True, max_length=512)
-    outputs = model(**inputs)
-    predictions = outputs.logits.argmax(axis=1).item()
-    return {"text": text, "prediction": predictions}
+
+@app.get("/train")
+async def train():
+    try:
+        os.system("python main.py")
+        return Response("Training Successful")
+    except Exception as e:
+        return Response(f"Error: {e}")
+
+@app.get("/predict")
+async def predict_route(text: str):
+    try:
+        pred_pipeline = PredictionPipeline()
+        summary = pred_pipeline.predict(text)
+        return summary
+    except Exception as e:
+        raise e
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8080)
