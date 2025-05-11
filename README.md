@@ -147,8 +147,12 @@ Data Ingestion, Data transformation, model training, and evaluation
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/text-classifier-api.git
-cd text-classifier-api
+git clone https://github.com/TejasGadi/intent-classification-using-distilbert.git
+cd intent-classification-using-distilbert
+
+# Download artifacts files from this source url (artifacts.zip) and paste inside root directory
+https://drive.google.com/file/d/1h90FNbhz7huZiqKR5vFL69U5_sqkb6OF/view?usp=sharing"
+
 ```
 
 ### 2. Install Requirements (locally)
